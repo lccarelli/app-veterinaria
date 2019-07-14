@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './bootstrap.min.css';
 import Header from './components/Header';
+import NuevaCita from './components/NuevaCita';
  
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
         <Header
           titulo='app-veterinaria'
           />
+          <NuevaCita></NuevaCita>
       </div>
       );
   }
