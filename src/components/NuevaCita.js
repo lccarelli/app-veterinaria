@@ -15,7 +15,7 @@ class NuevaCita extends Component {
                            <label className = "col-sm-4 col-lg-2 col-form-label">
                                Nombre Mascota
                            </label>
-                           <div className = "col-sm-8 col-lg-10">
+                           <div className = "col-sm-8 col-lg-8">
                                <input 
                                     type="text"
                                     className="form-control"
@@ -23,7 +23,33 @@ class NuevaCita extends Component {
                                     name="mascota"
                                     />
                            </div>
-                           
+                       </div>
+
+                       <div className = "form-group row">
+                           <label className = "col-sm-4 col-lg-2 col-form-label">
+                               Nombre Dueño
+                           </label>
+                           <div className = "col-sm-8 col-lg-8">
+                               <input 
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Nombre Dueño Mascota"
+                                    name="propietario"
+                                    />
+                           </div>
+                       </div>
+
+                       <div className = "form-group row">
+                           <label className = "col-sm-4 col-lg-2 col-form-label">
+                               Fecha Cita
+                           </label>
+                           <div className = "col-sm-8 col-lg-4">
+                               <input 
+                                    type="date"
+                                    className="form-control"
+                                    name="fecha-cita"
+                                    />
+                           </div>
                        </div>
                     
                     </form>
