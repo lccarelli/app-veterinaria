@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
+
+const stateInicial = {
+    cita : {
+        mascota : '',
+        propietario : '',
+        fecha : '',
+        hora : '',
+        sintomas : ''
+    },
+    error : false
+}
 
 class NuevaCita extends Component {
-    state = {
-        cita : {
-            mascota : '',
-            propietario : '',
-            fecha : '',
-            hora : '',
-            sintomas : ''
-        }
-    }
+    state = { ...stateInicial }
 
     handleChange = e => {
-        console.log(e.target.name + ': '+ e.target.value);
-
         this.setState({
             cita : {
                 ...this.state.cita,
@@ -22,13 +24,49 @@ class NuevaCita extends Component {
         })
     }
 
+    handleSubmit = e => {
+
+        e.preventDefault();
+
+        //extraer valores del state
+        const { mascota, propietario, fecha, hora, sintomas } = this.state.cita;
+
+        //validar campos no vacios
+        if(mascota === '' || propietario === '' || fecha === '' || hora === '' || sintomas === ''){
+            this.setState({
+                error : true
+            });
+            //detener ejecucion si error
+            return;
+        }
+
+        //genera objeto con los datos
+        const nuevaCita = {...this.state.cita};
+        nuevaCita.id = uuid();
+
+        //agregar la cita a app
+        this.props.crearNuevaCita(nuevaCita);
+
+        //colocar en el state, el stateInicial
+        this.setState({
+            ...stateInicial
+        })
+    }
+
     render() {
+        //extraer valor state
+        const { error } = this.state;
+
         return (
             <div className="card mt-5 py-5">
                 <div className="card-body">
                     <h2 className="card-title text-center mb-5">Llena el formulario para crear una cita</h2>
 
-                    <form>
+                    { error ?  <div className="alert alert-danger mt-2 mb-5 text-center">Todos los campos son obligatorios</div>: null}
+
+                    <form
+                        onSubmit={this.handleSubmit}
+                    >
                        <div className="form-group row">
                            <label className="col-sm-4 col-lg-2 col-form-label">Nombre Mascota</label>
                            <div className="col-sm-8 col-lg-8">
@@ -84,7 +122,7 @@ class NuevaCita extends Component {
                        </div>
 
                        <div className="form-group row">
-                           <label className="col-sm-4 col-lg-2 col-form-label">Hora</label>
+                           <label className="col-sm-4 col-lg-2 col-form-label">Sintomas</label>
                            <div className="col-sm-8 col-lg-10">
                                <textarea
                                 className="form-control"
