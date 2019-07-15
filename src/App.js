@@ -6,7 +6,7 @@ import NuevaCita from './components/NuevaCita';
 
 class App extends Component {
 
-  state = {
+  state={
 
   }
 
@@ -16,12 +16,11 @@ class App extends Component {
         <Header
           titulo='app-veterinaria'
           />
-          <div className = "row">
-            <div className = "col-md-10 mx-auto">
+          <div className="row">
+            <div className="col-md-10 mx-auto">
               <NuevaCita/>
             </div>
-          </div>
-          
+          </div> 
       </div>
       );
   }
