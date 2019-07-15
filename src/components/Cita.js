@@ -7,7 +7,7 @@ const Cita = ({cita}) => (
             <p className="card-text"><span>Nombre humano:</span> {cita.propietario}</p>
             <p className="card-text"><span>Fecha cita:</span> {cita.fecha}</p>
             <p className="card-text"><span>Hora cita:</span> {cita.hora}</p>
-            <p className="card-text"><span>Sintoma:</span> {cita.sintomas}</p>
+            <p className="card-text"><span>Sintomas:</span> {cita.sintomas}</p>
         </div>
     </div>
     
