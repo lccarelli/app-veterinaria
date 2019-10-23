@@ -11,5 +11,4 @@ const Cita = ({cita, eliminarCita}) => (
         </div>
     </div>
 );
-
 export default Cita;
