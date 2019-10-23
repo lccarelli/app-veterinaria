@@ -10,7 +10,6 @@ const Cita = ({cita, eliminarCita}) => (
             <p className="card-text"><span>Sintomas:</span> {cita.sintomas}</p>
         </div>
     </div>
-    
 );
 
 export default Cita;
