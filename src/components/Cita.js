@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cita = ({cita}) => (
+const Cita = ({cita, eliminarCita}) => (
     <div className="media mt-3">
         <div className="media-body">
             <h3 className="mt-0">{cita.mascota}</h3>

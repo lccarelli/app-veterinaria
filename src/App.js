@@ -21,6 +21,11 @@ class App extends Component {
     });
   }
 
+  //elimina las citas del states
+  eliminarCita = id => {
+    console.log(id);
+  }
+
   render() {
     return ( 
       <div className="container">
@@ -37,6 +42,7 @@ class App extends Component {
           <div className="mt-5 col-md-10 mx-auto">
             <ListaCitas
               citas={this.state.citas}
+              eliminarCita={this.eliminarCita}
             />
             </div> 
       </div>
