@@ -24,6 +24,18 @@ class App extends Component {
   //elimina las citas del states
   eliminarCita = id => {
     console.log(id);
+    console.log('diste click');
+    //primero tomar una copia del state, nunca debes mutar el state directamente
+    //siempre que se modifique el state tomar una copia
+    const citasActuales = [...this.state.citas];
+    console.log(citasActuales);
+    //utilizar filter para sacar el elemento @id del arreglo
+    const citas = citasActuales.filter(cita => cita.id !== id)
+    console.log(citas);
+    //finalmente actualizar el state
+    this.setState({
+      citas
+    })
   }
 
   render() {

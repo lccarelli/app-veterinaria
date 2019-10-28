@@ -8,6 +8,10 @@ const Cita = ({cita, eliminarCita}) => (
             <p className="card-text"><span>Fecha cita:</span> {cita.fecha}</p>
             <p className="card-text"><span>Hora cita:</span> {cita.hora}</p>
             <p className="card-text"><span>Sintomas:</span> {cita.sintomas}</p>
+
+            <button className="btn btn-danger"
+            onClick={() => eliminarCita(cita.id)}
+            >borrar &times;</button>
         </div>
     </div>
 );
